@@ -13,12 +13,11 @@ namespace ZipJPXtractor
 
             var filename = args[0];
             
-            string extractPath = @"extract";
-            extractPath = Path.GetFullPath(extractPath);
+            string extractPath = Path.GetDirectoryName(filename);
             
             Encoding shiftJIS = Encoding.GetEncoding("Shift_JIS");
             ZipFile.ExtractToDirectory(filename, extractPath,shiftJIS);
-            Console.WriteLine("Done! {0}", filename);
+            Console.WriteLine("Done! {0}", extractPath);
         }
     }
 }
